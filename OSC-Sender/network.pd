@@ -1,0 +1,18 @@
+#N canvas 0 22 450 300 12;
+#X obj 22 145 param.change;
+#X obj 23 117 netsend -u -b;
+#X obj 23 22 loadbang;
+#X obj 31 95 r osCC;
+#X obj 90 22 r gui-bang;
+#X msg 23 44 connect localhost 12001;
+#X obj 274 232 outlet;
+#X obj 274 188 oscparse;
+#X obj 274 208 list trim;
+#X obj 274 168 netreceive -u -b 14001;
+#X connect 2 0 5 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 0;
+#X connect 9 0 7 0;

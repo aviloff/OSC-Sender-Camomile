@@ -1,0 +1,42 @@
+#N canvas 1124 99 782 369 12;
+#X obj 19 43 oscparse;
+#X obj 19 -3 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 19 17 netreceive -u -b 12001;
+#X obj 19 69 list trim;
+#X obj 19 123 print p1;
+#X obj 19 94 route param1 param2, f 20;
+#X obj 87 123 print p2;
+#X obj 21 369 netsend -u -b;
+#X obj 21 299 loadbang;
+#X text 17 -28 receives from plugin;
+#X text 20 186 sends to plugin;
+#X obj 22 240 oscformat -f f param1;
+#X obj 32 347 r \$0-osCC;
+#X obj 22 263 s \$0-osCC;
+#X obj 192 262 s \$0-osCC;
+#X floatatom 22 215 5 0 0 0 - - -;
+#X floatatom 192 214 5 0 0 0 - - -;
+#X obj 192 239 oscformat -f f param2;
+#X msg 21 323 connect localhost 14001;
+#X text 374 196 for some reason this does not always work \, there
+is a loop \, the external libraries osc/iemnet/mrpeach would work best
+for this task \, possibly. I would love to compite Camomile with these
+\, and many others including cyclone \, faustgen \, gem \, ofelia \,
+but currently it does not compile with the latest to date XCode 12
+\, and says that XCode 1.5 is no longer supported;
+#X msg 114 348 disconnect;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 5 0;
+#X connect 5 0 4 0;
+#X connect 5 1 6 0;
+#X connect 8 0 18 0;
+#X connect 11 0 13 0;
+#X connect 12 0 7 0;
+#X connect 15 0 11 0;
+#X connect 16 0 17 0;
+#X connect 17 0 14 0;
+#X connect 18 0 7 0;
+#X connect 20 0 7 0;

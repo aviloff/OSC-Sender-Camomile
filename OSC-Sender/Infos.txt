@@ -1,0 +1,5 @@
+A plugin that sends parameter data as OSC messages
+
+Version: 0.01
+Author: Sviatoslav Avilov
+Parameter data handling based on Pierre Guillot's Bulgroz plugin

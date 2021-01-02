@@ -1,0 +1,16 @@
+param -name P1 -min 0 -max 10 -default 1;
+param -name P2 -min 0 -max 10 -default 1;
+param -name P3 -min 0 -max 10 -default 1;
+param -name P4 -min 0 -max 10 -default 1;
+param -name P5 -min 0 -max 10 -default 1;
+param -name P6 -min 0 -max 10 -default 1;
+param -name P7 -min 0 -max 10 -default 1;
+param -name P8 -min 0 -max 10 -default 1;
+param -name P9 -min 0 -max 10 -default 1;
+param -name P10 -min 0 -max 10 -default 1;
+iolayout 2 0;
+code sWrt;
+type effect;
+description Info.txt;
+manufacturer Sviatoslav Avilov;
+compatibility 1.0.7;
