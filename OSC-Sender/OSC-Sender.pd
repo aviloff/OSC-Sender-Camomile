@@ -1,14 +1,13 @@
 #N canvas 482 110 975 898 10;
-#X obj 802 -18 param.change;
 #X obj 39 60 hsl 180 15 0 10 0 0 \$0-sld-1-s \$0-sld-1-r empty -2 -8
 0 10 -92394 -1 -1 0 1;
 #X obj 230 60 nbx 5 15 -1e+37 1e+37 0 0 \$0-nbx-1-s \$0-nbx-1-r empty
 0 -8 0 10 -92394 -1 -1 0 256;
-#X msg 786 574 set \$1;
+#X msg 830 373 set \$1;
 #X obj 802 10 param.get.multi;
 #X obj 802 39 route 1 2 3 4 5 6 7 8 9 10, f 235;
-#X obj 802 156 s osCC;
-#X obj 942 158 s osCC;
+#X obj 804 152 s osCC;
+#X obj 943 154 s osCC;
 #X obj 1083 85 s osCC;
 #X obj 1224 87 s osCC;
 #X obj 1364 85 s osCC;
@@ -18,8 +17,8 @@
 #X obj 1927 95 s osCC;
 #X obj 2068 96 s osCC;
 #X msg 812 64 set \$1;
-#X obj 802 137 oscformat -f f param1;
-#X obj 942 137 oscformat -f f param2;
+#X obj 804 132 oscformat -f f param1;
+#X obj 943 133 oscformat -f f param2;
 #X obj 1083 65 oscformat -f f param3;
 #X obj 1224 65 oscformat -f f param4;
 #X text 296 60 param1;
@@ -31,70 +30,70 @@
 #X obj 1646 67 oscformat -f f param7;
 #X obj 1505 66 oscformat -f f param6;
 #X obj 1364 65 oscformat -f f param5;
-#X obj 786 553 r \$0-sld-1-s;
-#X obj 786 530 param.set 1 \$0-sld-1-s;
-#X obj 786 639 s \$0-sld-1-r;
-#X obj 786 618 r \$0-nbx-1-s;
-#X obj 786 595 s \$0-nbx-1-r;
+#X obj 830 352 r \$0-sld-1-s;
+#X obj 830 329 param.set 1 \$0-sld-1-s;
+#X obj 830 438 s \$0-sld-1-r;
+#X obj 830 417 r \$0-nbx-1-s;
+#X obj 830 394 s \$0-nbx-1-r;
 #X obj 39 82 hsl 180 15 0 10 0 0 \$0-sld-2-s \$0-sld-2-r empty -2 -8
 0 10 -92394 -1 -1 0 1;
 #X obj 230 82 nbx 5 15 -1e+37 1e+37 0 0 \$0-nbx-2-s \$0-nbx-2-r empty
 0 -8 0 10 -92394 -1 -1 0 256;
 #X text 296 82 param2;
-#X obj 822 85 s \$0-nbx-1-r;
-#X obj 812 106 s \$0-sld-1-r;
+#X obj 812 86 s \$0-sld-1-r;
 #X msg 955 64 set \$1;
-#X obj 965 85 s \$0-nbx-2-r;
-#X obj 955 106 s \$0-sld-2-r;
-#X msg 947 576 set \$1;
+#X obj 955 88 s \$0-sld-2-r;
+#X msg 991 375 set \$1;
 #X text 246 5 restart netsend;
-#X obj 947 531 param.set 2 \$0-sld-2-s;
-#X obj 947 555 r \$0-sld-2-s;
-#X obj 947 597 s \$0-nbx-2-r;
-#X obj 947 620 r \$0-nbx-2-s;
-#X obj 947 641 s \$0-sld-2-r;
-#X text 446 554 would be great if these send/receives could be handled
+#X obj 991 330 param.set 2 \$0-sld-2-s;
+#X obj 991 354 r \$0-sld-2-s;
+#X obj 991 396 s \$0-nbx-2-r;
+#X obj 991 419 r \$0-nbx-2-s;
+#X obj 991 440 s \$0-sld-2-r;
+#X text 490 353 would be great if these send/receives could be handled
 dynamically;
-#X text 432 60 Only this trick with [set \$1] allows to record/playback
+#X obj 793 302 route param1 param2, f 49;
+#X text -348 60 another issue is that the sliders do not switch to
+fine control mode when SHIFT is pressed (like they do in PD);
+#X obj 793 267 network;
+#X text 431 60 Only this trick with [set \$1( allows to record/playback
 automation data predictably. Why I didn't figure out yet. Otherwise
 it would be better to implement this sending dynamically in the param.get.multi
-abstraction or if needed copy it to the main canvas;
-#X obj 749 503 route param1 param2, f 49;
-#X text -388 59 another issue is that the sliders do not switch to
-fine control mode when SHIFT is pressed (like they do in PD);
-#X obj 749 483 network;
-#X connect 3 0 33 0;
-#X connect 4 0 5 0;
-#X connect 5 0 16 0;
-#X connect 5 0 17 0;
-#X connect 5 1 18 0;
-#X connect 5 1 39 0;
-#X connect 5 2 19 0;
-#X connect 5 3 20 0;
-#X connect 5 4 28 0;
-#X connect 5 5 27 0;
-#X connect 5 6 26 0;
-#X connect 5 7 25 0;
-#X connect 5 8 24 0;
-#X connect 5 9 22 0;
-#X connect 16 0 37 0;
+abstraction or if needed copy objects from there to the main canvas
+;
+#X text 591 252 networking and parameter change abstraction;
+#X connect 2 0 32 0;
+#X connect 3 0 4 0;
+#X connect 4 0 15 0;
+#X connect 4 0 16 0;
+#X connect 4 1 17 0;
+#X connect 4 1 37 0;
+#X connect 4 2 18 0;
+#X connect 4 3 19 0;
+#X connect 4 4 27 0;
+#X connect 4 5 26 0;
+#X connect 4 6 25 0;
+#X connect 4 7 24 0;
+#X connect 4 8 23 0;
+#X connect 4 9 21 0;
+#X connect 15 0 36 0;
+#X connect 16 0 5 0;
 #X connect 17 0 6 0;
 #X connect 18 0 7 0;
 #X connect 19 0 8 0;
-#X connect 20 0 9 0;
-#X connect 22 0 15 0;
-#X connect 24 0 14 0;
-#X connect 25 0 13 0;
-#X connect 26 0 12 0;
-#X connect 27 0 11 0;
-#X connect 28 0 10 0;
-#X connect 29 0 3 0;
-#X connect 32 0 31 0;
-#X connect 39 0 41 0;
-#X connect 42 0 46 0;
-#X connect 45 0 42 0;
-#X connect 47 0 48 0;
-#X connect 51 0 30 0;
-#X connect 51 1 44 0;
-#X connect 53 0 51 0;
+#X connect 21 0 14 0;
+#X connect 23 0 13 0;
+#X connect 24 0 12 0;
+#X connect 25 0 11 0;
+#X connect 26 0 10 0;
+#X connect 27 0 9 0;
+#X connect 28 0 2 0;
+#X connect 31 0 30 0;
+#X connect 37 0 38 0;
+#X connect 39 0 43 0;
+#X connect 42 0 39 0;
+#X connect 44 0 45 0;
+#X connect 47 0 29 0;
+#X connect 47 1 41 0;
+#X connect 49 0 47 0;
 #X coords 0 -1 1 1 360 160 1 2 2;
