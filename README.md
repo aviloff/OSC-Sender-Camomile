@@ -6,7 +6,6 @@ This is an example with 2 sliders.
 
 Sought optimisations:
 
-- automatic
-- to make the plugin work as midi only or automation parameter only
+- automatic '[send]' parameters from parameter.get.multi to sliders
+- make the plugin work as midi only or even "automation parameters" only
 
- 
