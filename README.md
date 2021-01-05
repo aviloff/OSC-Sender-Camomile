@@ -9,3 +9,11 @@ Sought optimisations:
 - automatic '[send]' parameters from parameter.get.multi to sliders
 - make the plugin work as midi only or even "automation parameters" only
 
+References
+
+---
+
+
+[Camomile Plugin](https://github.com/pierreguillot/Camomile)
+
+[Pure Data](https://puredata.info/)
