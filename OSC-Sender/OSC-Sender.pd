@@ -1,7 +1,7 @@
 #N canvas 484 110 1566 898 10;
 #X obj 39 60 hsl 180 15 0 10 0 0 \$0-sld-1-s \$0-sld-1-r empty -2 -8
 0 10 -92394 -1 -1 0 1;
-#X obj 230 60 nbx 5 15 -1e+37 1e+37 0 0 \$0-nbx-1-s \$0-nbx-1-r empty
+#X obj 230 60 nbx 5 15 -1e+37 1e+37 0 0 \$0-nbx-1-s \$0-nbx-1-r c0x20>sdcd
 0 -8 0 10 -92394 -1 -1 0 256;
 #X msg 830 373 set \$1;
 #X obj 803 151 s osCC;
