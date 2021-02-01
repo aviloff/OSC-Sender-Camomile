@@ -1,11 +1,12 @@
-#N canvas 297 225 782 369 10;
+#N canvas 916 -547 782 369 10;
 #X obj 19 43 oscparse;
 #X obj 19 -3 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
+#X obj 19 20 netreceive -u -b 12001;
 #X obj 19 66 list trim;
 #X obj 19 110 print p1;
 #X obj 19 87 route param1 param2, f 20;
-#X obj 77 111 print p2;
+#X obj 87 110 print p2;
 #X obj 21 369 netsend -u -b;
 #X obj 21 299 loadbang;
 #X text 17 -28 receives from plugin;
@@ -25,21 +26,17 @@ for this task \, possibly. I would love to compite Camomile with these
 but currently it does not compile with the latest to date XCode 12
 \, and says that XCode 1.5 is no longer supported;
 #X msg 114 348 disconnect;
-#X obj 192 40 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 19 20 netreceive -u -b 14001;
-#X connect 0 0 2 0;
-#X connect 1 0 21 0;
-#X connect 2 0 4 0;
-#X connect 4 0 3 0;
-#X connect 4 1 5 0;
-#X connect 7 0 17 0;
-#X connect 10 0 12 0;
-#X connect 11 0 6 0;
-#X connect 14 0 10 0;
-#X connect 15 0 16 0;
-#X connect 16 0 13 0;
-#X connect 17 0 6 0;
-#X connect 19 0 6 0;
-#X connect 21 0 0 0;
-#X connect 21 0 20 0;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 5 0;
+#X connect 5 0 4 0;
+#X connect 5 1 6 0;
+#X connect 8 0 18 0;
+#X connect 11 0 13 0;
+#X connect 12 0 7 0;
+#X connect 15 0 11 0;
+#X connect 16 0 17 0;
+#X connect 17 0 14 0;
+#X connect 18 0 7 0;
+#X connect 20 0 7 0;
